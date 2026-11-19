@@ -1,0 +1,38 @@
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Results from a pre-release or a `.vsix` from Releases. Reports that everything worked are useful too.
+        Found a bug? Open a bug report as well, and link it here.
+  - type: input
+    id: version
+    attributes:
+      label: Version tested
+      placeholder: "2.3.0"
+    validations:
+      required: true
+  - type: textarea
+    id: setup
+    attributes:
+      label: What you tested with
+      description: Model formats, roughly how many models, output or database, operating system.
+      placeholder: Prisma, 25 models, PostgreSQL in Docker, Windows 11
+    validations:
+      required: true
+  - type: dropdown
+    id: result
+    attributes:
+      label: Result
+      options:
+        - Everything worked
+        - Worked, with small problems
+        - Something broke
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: What went wrong or felt off, and links to any bug reports.
+    validations:
+      required: false

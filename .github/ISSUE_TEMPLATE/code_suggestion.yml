@@ -1,0 +1,58 @@
+name: Code suggestion or patch
+description: Propose a code change, a fix you worked out, or a test case
+labels: ["code-suggestion", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The extension's source is private, so code is sent here instead of as a pull request. The maintainer writes the change in the source and credits you in the release notes.
+        Read [CLA.md](https://github.com/joezelle/mock-data-generator-community/blob/main/CLA.md) first: it's what lets your code be used.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What it fixes or adds
+      description: Link the bug report or feature request if there is one (#123).
+    validations:
+      required: true
+
+  - type: textarea
+    id: change
+    attributes:
+      label: The change
+      description: Describe the approach, then paste code, pseudo-code or a standalone function.
+      placeholder: |
+        Drizzle's `bigserial` columns aren't treated as auto-increment, so they get random values.
+        Treating `bigserial` like `serial` fixes it:
+
+        ```ts
+        const AUTO_INCREMENT = new Set(['serial', 'smallserial', 'bigserial']);
+        ```
+    validations:
+      required: true
+
+  - type: textarea
+    id: test
+    attributes:
+      label: How to check it
+      description: A model file and the output you expect with the change. This is often as useful as the code.
+    validations:
+      required: false
+
+  - type: textarea
+    id: sources
+    attributes:
+      label: Code from elsewhere
+      description: If any of the code comes from another project, say where and under what license. Leave empty if it's all yours.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: cla
+    attributes:
+      label: Agreement
+      options:
+        - label: I agree to the terms in CLA.md for this contribution, and I have the right to submit it.
+          required: true
+        - label: Credit me by my GitHub username in the release notes.
+          required: false

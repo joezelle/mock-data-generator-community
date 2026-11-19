@@ -1,0 +1,142 @@
+name: Bug report
+description: Something doesn't work as documented
+labels: ["bug", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting. A small model file that shows the problem is the most useful thing you can include.
+        Remove passwords, connection strings, hostnames and anything else private before posting.
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What you did, what you expected, and what you got instead.
+      placeholder: |
+        I generated 10 users and 30 orders as SQL. Every order had userId 1 instead of being spread over the users.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open a project with the model below
+        2. Run "Mock Data Generator: Generate Mock Data"
+        3. Enter 10, choose "Set counts per model...", set Order to 30
+        4. Choose SQL
+    validations:
+      required: true
+
+  - type: textarea
+    id: models
+    attributes:
+      label: Model file
+      description: The smallest set of models that shows the problem, with private names changed. Say which file each comes from.
+      render: typescript
+    validations:
+      required: false
+
+  - type: dropdown
+    id: model-format
+    attributes:
+      label: Model format
+      multiple: true
+      options:
+        - TypeScript interfaces
+        - TypeScript classes
+        - JavaScript classes
+        - Prisma
+        - Mongoose
+        - TypeORM
+        - Drizzle
+        - Zod
+        - Not related to models
+    validations:
+      required: true
+
+  - type: dropdown
+    id: output
+    attributes:
+      label: Output
+      multiple: true
+      options:
+        - JSON
+        - SQL
+        - CSV
+        - GraphQL
+        - TypeScript
+        - API Mock
+        - Excel (tab-separated)
+        - "Database: MySQL"
+        - "Database: PostgreSQL"
+        - "Database: SQLite"
+        - "Database: SQL Server"
+        - "Database: Oracle"
+        - "Database: MongoDB"
+        - Model diagram
+        - Docker containers
+        - Not related to output
+    validations:
+      required: true
+
+  - type: input
+    id: extension-version
+    attributes:
+      label: Extension version
+      description: Extensions view → Mock Data Generator; the version is next to the name.
+      placeholder: "2.2.1"
+    validations:
+      required: true
+
+  - type: input
+    id: vscode-version
+    attributes:
+      label: VS Code version
+      description: Help → About (or Code → About Visual Studio Code on macOS).
+      placeholder: "1.96.0"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating system
+      options:
+        - Windows
+        - macOS
+        - Linux
+        - WSL / Remote / Dev Container / Codespaces
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs
+      description: |
+        Set `"mockDataGenerator.logLevel": "debug"`, run the command again, then copy the "Mock Data Generator" output channel (View → Output). Remove credentials first.
+      render: text
+    validations:
+      required: false
+
+  - type: textarea
+    id: settings
+    attributes:
+      label: Relevant settings
+      description: Any `mockDataGenerator.*` settings you changed, such as `fieldRules` or `modelFilePatterns`.
+      render: jsonc
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I searched the existing issues and this isn't a duplicate.
+          required: true
+        - label: I removed passwords, connection strings and other private details.
+          required: true

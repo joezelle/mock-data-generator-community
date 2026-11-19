@@ -1,0 +1,61 @@
+name: Feature request
+description: A new feature, model format, output format or database, or a change to how something works
+labels: ["enhancement", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Search the existing requests first; a 👍 on one that matches helps decide what gets built.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: The problem
+      description: What you're trying to do, and what gets in the way today.
+      placeholder: My project defines models with Valibot schemas, so the extension finds no models.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What you'd like
+      description: How you picture it working. Example models, settings or output are very helpful.
+    validations:
+      required: true
+
+  - type: textarea
+    id: workaround
+    attributes:
+      label: What you do now
+      description: Any workaround you use, and why it isn't enough.
+    validations:
+      required: false
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      multiple: true
+      options:
+        - Reading models
+        - Generated values
+        - Relationships and foreign keys
+        - Field rules
+        - Output formats
+        - Database population
+        - Docker containers
+        - Preview
+        - Model diagrams
+        - Settings and commands
+        - Something else
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I searched the existing issues and discussions.
+          required: true

@@ -1,0 +1,15 @@
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: The idea
+      description: What it is, and the problem it solves for you.
+    validations:
+      required: true
+  - type: textarea
+    id: example
+    attributes:
+      label: An example
+      description: Models, settings or output that show how it would work.
+    validations:
+      required: false

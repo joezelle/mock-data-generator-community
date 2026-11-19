@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Ask a question
+    url: https://github.com/joezelle/mock-data-generator-community/discussions/categories/q-a
+    about: How to do something, or whether something is possible. Answers are kept for the next person.
+  - name: Share an idea
+    url: https://github.com/joezelle/mock-data-generator-community/discussions/categories/ideas
+    about: Not sure it's a feature request yet? Talk it through first.
+  - name: Report a security problem
+    url: https://github.com/joezelle/mock-data-generator-community/security/advisories/new
+    about: Report privately. Please don't open a public issue.

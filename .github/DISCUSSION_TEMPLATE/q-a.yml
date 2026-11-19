@@ -1,0 +1,23 @@
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: Your question
+      description: What you're trying to do, and what you tried.
+    validations:
+      required: true
+  - type: textarea
+    id: models
+    attributes:
+      label: Models or settings involved
+      description: Optional. Remove anything private.
+      render: typescript
+    validations:
+      required: false
+  - type: input
+    id: version
+    attributes:
+      label: Extension version
+      placeholder: "2.2.1"
+    validations:
+      required: false
